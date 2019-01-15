@@ -1,4 +1,20 @@
-var PORT = process.env.PORT || 3000
+
+'use strict';
+
+const express = require('express');
+const socketIO = require('socket.io');
+const path = require('path');
+
+const PORT = process.env.PORT || 3000;
+const INDEX = path.join(__dirname, 'index.html');
+
+const server = express()
+  .use((req, res) => res.sendFile(INDEX) )
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
+const io = socketIO(server);
+
+/*var PORT = process.env.PORT || 3000
 var express = require('express');
 
 var app = express();
@@ -14,7 +30,8 @@ server.listen(PORT,function(){
 
 var socket = require('socket.io');
 
-var io = socket(server);
+var io = socket(server);*/
+
 var users = [];
 var cardPairs = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24];
 var cardPairIndex = 0;

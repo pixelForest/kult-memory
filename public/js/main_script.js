@@ -1,6 +1,6 @@
 initGame();
 
-var socket = io.connect('https://kultmemory.herokuapp.com:3000');
+var socket = io();
 socket.on('cardFlip',clickElement);
 socket.on('cardUnflip',unflipCards);
 socket.on('cardMatch',disableCards);
