@@ -1,4 +1,4 @@
-var socket = io.connect('http://kultmemory.herokuapp.com:3000');//io.connect('http://localhost:3000');
+var socket = io.connect('https://kultmemory.herokuapp.com:3000');//io.connect('http://localhost:3000');
 
 socket.on('cardPairs',initGame);
 socket.on('reset', reset);
