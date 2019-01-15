@@ -4,7 +4,7 @@ var socket = io();
 socket.on('cardFlip',clickElement);
 socket.on('cardUnflip',unflipCards);
 socket.on('cardMatch',disableCards);
-//socket.on('reset', endGame);
+socket.on('reset', reset);
 
 // game functions
 const cards = document.querySelectorAll('.memory-card');
@@ -79,6 +79,11 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 function endGame()
 {
   socket.emit('endGame');
+  window.location.reload();
+}
+
+function reset()
+{
   window.location.reload();
 }
 
