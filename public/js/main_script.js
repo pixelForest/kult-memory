@@ -4,6 +4,7 @@ var socket = io();
 socket.on('cardFlip',clickElement);
 socket.on('cardUnflip',unflipCards);
 socket.on('cardMatch',disableCards);
+//socket.on('reset', endGame);
 
 // game functions
 const cards = document.querySelectorAll('.memory-card');
